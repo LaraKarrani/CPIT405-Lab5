@@ -1,0 +1,1031 @@
+/* ================= GENERAL ================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7fb;
+    color: #111111;
+}
+
+p {
+    line-height: 1.7;
+}
+
+/* ================= HEADER ================= */
+
+#profile-header {
+    position: relative;
+    overflow: hidden;
+    background-color: #050505;
+    color: white;
+    padding: 75px 8%;
+    min-height: 360px;
+}
+
+#profile-header::before {
+    content: "";
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        #ff3cac,
+        #784ba0,
+        #2b86c5
+    );
+    right: -50px;
+    top: -120px;
+}
+
+#profile-header::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    border-radius: 150px 150px 0 0;
+    background: linear-gradient(
+        90deg,
+        #ff62c0,
+        #8b5cf6,
+        #9ed8ff
+    );
+    right: 100px;
+    bottom: 0;
+}
+
+#profile-header h1 {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    font-size: 68px;
+    line-height: 1;
+    letter-spacing: -2px;
+    color: white;
+}
+
+.job-title {
+    position: relative;
+    z-index: 2;
+    margin: 20px 0 35px;
+    color: #ffb4dd;
+    font-size: 19px;
+}
+
+/* ================= NAVIGATION ================= */
+
+nav {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 750px;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border: 1px solid #ff5fbd;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #ff4fb3;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* ================= MAIN GRID ================= */
+
+.cv-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+/* ================= GENERAL SECTIONS ================= */
+
+.cv-section {
+    background-color: white;
+    padding: 32px;
+    border: 1px solid #e4e4e4;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+}
+
+.cv-section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(116, 75, 162, 0.15);
+}
+
+.cv-section h2 {
+    margin-top: 0;
+    font-size: 29px;
+    color: #111111;
+    border-bottom: 4px solid #ff4fb3;
+    padding-bottom: 10px;
+}
+
+.cv-section h3 {
+    color: #6d28d9;
+}
+
+/* ================= ABOUT ================= */
+
+#about {
+    background: linear-gradient(
+        120deg,
+        #ffffff 60%,
+        #ffe3f5
+    );
+}
+
+/* ================= SHOW MORE / SHOW LESS ================= */
+
+/* Keep the extra paragraph hidden initially */
+
+#more-about[hidden] {
+    display: none;
+}
+
+#about-toggle {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 11px 24px;
+    background: linear-gradient(
+        90deg,
+        #ff4fb3,
+        #8b5cf6
+    );
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#about-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(139, 92, 246, 0.3);
+}
+
+#about-toggle:active {
+    transform: translateY(0);
+}
+
+#about-toggle:focus-visible {
+    outline: 3px solid #8b5cf6;
+    outline-offset: 3px;
+}
+
+/* ================= EDUCATION ================= */
+
+#education {
+    border-left: 8px solid #8b5cf6;
+}
+
+/* ================= EXPERIENCE ================= */
+
+#experience {
+    grid-column: 1 / 3;
+    background: linear-gradient(
+        110deg,
+        #111111 0%,
+        #111111 65%,
+        #341458 100%
+    );
+    color: white;
+    border: none;
+    border-left: 10px solid #ff4fb3;
+}
+
+#experience h2 {
+    color: white;
+}
+
+#experience h3 {
+    color: #ff72c6;
+    font-size: 25px;
+}
+
+/* ================= SKILLS ================= */
+
+#skills {
+    grid-column: 1 / 3;
+    border-top: 8px solid #ff4fb3;
+}
+
+#skills h2 {
+    margin-bottom: 28px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 25px;
+}
+
+.skill-group {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #fbf7ff
+    );
+    padding: 20px;
+    border: 1px solid #eee7f7;
+    border-radius: 14px;
+}
+
+#skills h3 {
+    margin: 0 0 15px;
+    padding: 10px 14px;
+    background-color: #f7f1ff;
+    border-left: 5px solid #8b5cf6;
+    border-radius: 8px;
+    color: #6d28d9;
+    font-size: 18px;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skills-list li {
+    padding: 8px 15px;
+    border-radius: 30px;
+    background: linear-gradient(
+        100deg,
+        #ff67bd,
+        #9b6cff
+    );
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.skills-list li:hover {
+    transform: scale(1.08);
+}
+
+/* ================= PROJECTS ================= */
+
+#projects {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+#projects h2 {
+    grid-column: 1 / 3;
+}
+
+/* ================= PROJECT FILTER BUTTONS ================= */
+
+/* Arrange the filter buttons in one row */
+
+.project-filters {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 5px;
+}
+
+/* Style the project filter buttons */
+
+.filter-btn {
+    padding: 11px 25px;
+    background-color: #ffffff;
+    color: #6d28d9;
+    border: 2px solid #ff4fb3;
+    border-radius: 30px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Highlight the selected filter */
+
+.filter-btn.active {
+    background: linear-gradient(
+        90deg,
+        #ff4fb3,
+        #8b5cf6
+    );
+    color: white;
+    border-color: transparent;
+}
+
+/* Add a hover effect */
+
+.filter-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.2);
+}
+
+.filter-btn:focus-visible {
+    outline: 3px solid #8b5cf6;
+    outline-offset: 3px;
+}
+
+/* ================= DYNAMIC PROJECT GRID ================= */
+
+/* Display dynamically generated projects in two columns */
+
+.projects-grid {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    background-color: #0b0b0b;
+    color: white;
+    padding: 28px;
+    border-radius: 15px;
+    border-top: 5px solid #ff4fb3;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: #ff72c6;
+    font-size: 23px;
+}
+
+.project-card p {
+    min-height: 80px;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: linear-gradient(
+        90deg,
+        #ff4fb3,
+        #7c3aed
+    );
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.project-card a:hover {
+    transform: scale(1.05);
+}
+
+/* ================= HACKATHON ================= */
+
+#hackathon {
+    grid-column: 1 / 3;
+    background: linear-gradient(
+        120deg,
+        #7c3aed,
+        #e93cac,
+        #ff73bd
+    );
+    color: white;
+    text-align: center;
+    padding: 45px;
+}
+
+#hackathon h2 {
+    color: white;
+    border-bottom-color: white;
+}
+
+#hackathon h3 {
+    color: white;
+    font-size: 30px;
+}
+
+/* ================= PROFILE DETAILS ================= */
+
+.profile-details-grid {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: stretch;
+}
+
+.right-details {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 25px;
+}
+
+/* ================= ACTIVITIES ================= */
+
+#activities {
+    border-top: 8px solid #8b5cf6;
+    height: 100%;
+}
+
+#activities article {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #dddddd;
+}
+
+#activities article:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* ================= INTERESTS ================= */
+
+#interests {
+    background: linear-gradient(
+        135deg,
+        #fff0f8,
+        #ffffff
+    );
+    border-top: 8px solid #ff4fb3;
+}
+
+#interests .skills-list {
+    margin-top: 20px;
+}
+
+/* ================= LANGUAGES ================= */
+
+#languages {
+    border-left: 8px solid #ff4fb3;
+}
+
+#languages h2 {
+    margin-top: 0;
+    border-bottom: 4px solid #ff4fb3;
+    padding-bottom: 10px;
+}
+
+.language-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+#languages p {
+    display: inline-block;
+    margin: 0;
+    padding: 10px 18px;
+    background-color: #f7f1ff;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+/* ================= CONTACT ================= */
+
+#contact {
+    grid-column: 1 / 3;
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #e93cac,
+        #ff73bd
+    );
+    color: white;
+    border: none;
+}
+
+#contact h2 {
+    color: white;
+    border-bottom-color: white;
+}
+
+#contact a {
+    color: white;
+    font-weight: bold;
+}
+
+#contact a:hover {
+    color: #ffe1f2;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background-color: #050505;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* ================= THEME BUTTON ================= */
+
+#theme-toggle {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    margin-bottom: 20px;
+    background: transparent;
+    border: 2px solid #ff67bd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hollow crescent moon */
+
+#theme-toggle::before {
+    content: "";
+    display: block;
+    width: 19px;
+    height: 19px;
+    border: 2.5px solid #ffb4dd;
+    border-radius: 50%;
+    box-shadow: inset 5px 0 0 0 #ffb4dd;
+    transform: rotate(-35deg);
+    transition: 0.3s;
+}
+
+#theme-toggle:hover {
+    background: rgba(255, 103, 189, 0.15);
+    border-color: #ffffff;
+    transform: scale(1.08);
+}
+
+#theme-toggle:hover::before {
+    border-color: #ffffff;
+    box-shadow: inset 5px 0 0 0 #ffffff;
+}
+
+/* ================= PRINT BUTTON ================= */
+
+/* Style the Print / Save PDF button */
+
+#print-btn {
+    position: relative;
+    z-index: 5;
+    display: inline-block;
+    margin-bottom: 25px;
+    padding: 12px 25px;
+    background: linear-gradient(
+        90deg,
+        #ff4fb3,
+        #8b5cf6
+    );
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#print-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(255, 79, 179, 0.3);
+}
+
+#print-btn:focus-visible {
+    outline: 3px solid #ffb4dd;
+    outline-offset: 3px;
+}
+
+/* ================= DARK MODE ================= */
+
+body.dark-mode {
+    background-color: #15151f;
+    color: #ffffff;
+}
+
+.dark-mode .cv-section {
+    background: #252538;
+    color: #ffffff;
+}
+
+.dark-mode .cv-section h2 {
+    color: #ffffff;
+}
+
+.dark-mode .cv-section h3 {
+    color: #ff72c6;
+}
+
+.dark-mode .skill-group {
+    background: #33334a;
+    border-color: #55556a;
+}
+
+.dark-mode #skills h3 {
+    background: #404057;
+}
+
+.dark-mode #languages p {
+    background: #404057;
+}
+
+.dark-mode .project-card {
+    background: #11111c;
+}
+
+/* Style filter buttons in dark mode */
+
+.dark-mode .filter-btn {
+    background-color: #33334a;
+    color: #ffffff;
+}
+
+.dark-mode .filter-btn.active {
+    background: linear-gradient(
+        90deg,
+        #ff4fb3,
+        #8b5cf6
+    );
+    color: #ffffff;
+}
+
+/* Preserve the experience gradient */
+
+.dark-mode #experience {
+    background: linear-gradient(
+        110deg,
+        #111111 0%,
+        #111111 65%,
+        #341458 100%
+    );
+}
+
+/* Preserve the hackathon and contact gradients */
+
+.dark-mode #hackathon,
+.dark-mode #contact {
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #e93cac,
+        #ff73bd
+    );
+}
+
+/* Improve text contrast */
+
+.dark-mode .cv-section p {
+    color: inherit;
+}
+
+.dark-mode .skills-list li {
+    color: #ffffff;
+}
+
+.dark-mode #theme-toggle {
+    border-color: #b794ff;
+}
+
+/* ================= DARK MODE FIXES ================= */
+
+.dark-mode #about {
+    background: #252538;
+    color: #ffffff;
+}
+
+.dark-mode #about h2,
+.dark-mode #about p {
+    color: #ffffff;
+}
+
+.dark-mode #interests {
+    background: #252538;
+}
+
+.dark-mode #about-toggle {
+    color: #ffffff;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 750px) {
+
+    #profile-header {
+        padding: 55px 30px;
+        min-height: 400px;
+    }
+
+    #profile-header h1 {
+        font-size: 46px;
+    }
+
+    #profile-header::before {
+        width: 190px;
+        height: 190px;
+        right: -70px;
+        opacity: 0.7;
+    }
+
+    #profile-header::after {
+        width: 170px;
+        height: 90px;
+        right: 0;
+        opacity: 0.7;
+    }
+
+    nav {
+        max-width: 300px;
+    }
+
+    .cv-container {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    #experience,
+    #skills,
+    #projects,
+    #hackathon,
+    .profile-details-grid,
+    #contact {
+        grid-column: 1;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #projects {
+        grid-template-columns: 1fr;
+    }
+
+    #projects h2 {
+        grid-column: 1;
+    }
+
+    /* Show one project card per row on mobile */
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Allow filter buttons to wrap on small screens */
+
+    .project-filters {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .filter-btn {
+        padding: 10px 18px;
+    }
+
+    .profile-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .right-details {
+        grid-template-rows: auto;
+    }
+
+    .language-list {
+        display: block;
+    }
+
+    #languages p {
+        margin: 5px 5px 5px 0;
+    }
+}
+
+/* ================= PRINT / SAVE PDF ================= */
+
+/* Set the printed page size and margins */
+
+@page {
+    size: A4;
+    margin: 12mm;
+}
+
+@media print {
+
+    /* Use a clean white background for printing */
+
+    html,
+    body,
+    body.dark-mode {
+        background: white !important;
+        color: black !important;
+    }
+
+    /* Hide interactive controls */
+
+    #theme-toggle,
+    #print-btn,
+    #about-toggle,
+    .project-filters,
+    nav {
+        display: none !important;
+    }
+
+    /* Show the complete About Me paragraph */
+
+    #more-about[hidden] {
+        display: block !important;
+    }
+
+    /* Simplify the header */
+
+    #profile-header {
+        background: white !important;
+        color: black !important;
+        min-height: auto;
+        padding: 15px 0;
+    }
+
+    #profile-header::before,
+    #profile-header::after {
+        display: none !important;
+    }
+
+    #profile-header h1 {
+        color: black !important;
+        font-size: 32px;
+    }
+
+    .job-title {
+        color: #333333 !important;
+        margin: 10px 0;
+    }
+
+    /* Make the CV fit the printed page */
+
+    .cv-container {
+        display: block;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Remove shadows and dark backgrounds */
+
+    .cv-section,
+    .dark-mode .cv-section,
+    #about,
+    #experience,
+    #hackathon,
+    #interests,
+    #contact,
+    .dark-mode #about,
+    .dark-mode #experience,
+    .dark-mode #hackathon,
+    .dark-mode #interests,
+    .dark-mode #contact {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        border: 1px solid #dddddd;
+        border-radius: 0;
+        padding: 14px;
+        margin-bottom: 12px;
+        transform: none !important;
+    }
+
+    /* Keep text readable */
+
+    .cv-section h2,
+    .cv-section h3,
+    .dark-mode .cv-section h2,
+    .dark-mode .cv-section h3,
+    #experience h2,
+    #hackathon h2,
+    #hackathon h3,
+    #contact h2 {
+        color: black !important;
+    }
+
+    .cv-section p,
+    .dark-mode .cv-section p {
+        color: black !important;
+    }
+
+    /* Simplify skills */
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .skill-group,
+    .dark-mode .skill-group {
+        background: white !important;
+        border: 1px solid #dddddd;
+    }
+
+    .skills-list li,
+    .dark-mode .skills-list li {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #dddddd;
+    }
+
+    /* Arrange project cards for printing */
+
+    #projects {
+        display: block;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .project-card,
+    .dark-mode .project-card {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #dddddd;
+        border-top: 3px solid #ff4fb3;
+        padding: 14px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .project-card h3 {
+        color: black !important;
+    }
+
+    .project-card p {
+        min-height: 0;
+    }
+
+    /* Show links as readable text */
+
+    .project-card a {
+        background: none !important;
+        color: black !important;
+        padding: 0;
+        margin-top: 5px;
+        text-decoration: underline;
+    }
+
+    #contact a {
+        color: black !important;
+    }
+
+    /* Keep sections together when possible */
+
+    .cv-section,
+    .skill-group,
+    .profile-details-grid article {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* Simplify the details layout */
+
+    .profile-details-grid,
+    .right-details {
+        display: block;
+    }
+
+    /* Hide the footer in the printed CV */
+
+    footer {
+        display: none !important;
+    }
+}

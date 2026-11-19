@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lara Karrani - CV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header id="profile-header">
+
+    <!-- Dark mode toggle -->
+    <button id="theme-toggle" type="button"
+            aria-label="Toggle dark mode"></button>
+
+    <!-- Print / Save PDF button -->
+    <button id="print-btn" type="button">
+        Print / Save PDF
+    </button>
+
+    <h1>Lara Karrani</h1>
+
+    <p class="job-title">
+        Information Technology Student | Software Engineering Track
+    </p>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#hackathon">Hackathon</a>
+        <a href="#activities">Activities</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<main class="cv-container">
+
+    <section id="about" class="cv-section">
+
+        <h2>About Me</h2>
+
+        <p>
+            Information Technology student specializing in Software Engineering
+            with strong interest in application security, system design,
+            software development, and database design.
+        </p>
+
+        <p id="more-about" hidden>
+            I enjoy building academic and practical projects involving
+            system analysis, object-oriented programming, UI/UX design,
+            and software development.
+        </p>
+
+        <button id="about-toggle" type="button">Show More</button>
+
+    </section>
+
+    <section id="education" class="cv-section">
+
+        <h2>Education</h2>
+
+        <article class="education-item">
+            <h3>King Abdulaziz University</h3>
+            <p>Bachelor of Information Technology</p>
+            <p>Software Engineering Track</p>
+            <p>Expected Graduation: 2027</p>
+            <p>GPA: 4.93 / 5.00</p>
+        </article>
+
+    </section>
+
+    <section id="experience" class="cv-section">
+
+        <h2>Experience</h2>
+
+        <article>
+            <h3>Summer Training - Sejel Technology</h3>
+
+            <p>
+                Transportation Information Center & Fleet Management
+            </p>
+
+            <p>
+                Completed practical training covering databases,
+                data visualization, software development,
+                Power BI, Tableau, Python, Streamlit,
+                and cybersecurity concepts.
+            </p>
+
+            <p>
+                Worked with PostgreSQL and DBeaver,
+                developed transportation dashboards,
+                and contributed to the Ask Your Data project.
+            </p>
+        </article>
+
+    </section>
+
+    <section id="skills" class="cv-section">
+
+        <h2>Skills</h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-group">
+                <h3>Programming Languages</h3>
+                <ul class="skills-list">
+                    <li>Java</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+
+            <div class="skill-group">
+                <h3>Web Development</h3>
+                <ul class="skills-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+
+            <div class="skill-group">
+                <h3>Database & Data</h3>
+                <ul class="skills-list">
+                    <li>SQL</li>
+                    <li>Relational Databases</li>
+                    <li>ERD Design</li>
+                    <li>Normalization</li>
+                    <li>Database Modeling</li>
+                </ul>
+            </div>
+
+            <div class="skill-group">
+                <h3>Software Engineering</h3>
+                <ul class="skills-list">
+                    <li>OOP</li>
+                    <li>System Analysis</li>
+                    <li>Requirements Engineering</li>
+                    <li>Use Case Modeling</li>
+                    <li>Test Case Design</li>
+                    <li>UML Diagrams</li>
+                </ul>
+            </div>
+
+            <div class="skill-group">
+                <h3>Cybersecurity</h3>
+                <ul class="skills-list">
+                    <li>Secure Coding</li>
+                    <li>Application Security</li>
+                    <li>Encryption Concepts</li>
+                    <li>Access Control</li>
+                </ul>
+            </div>
+
+            <div class="skill-group">
+                <h3>Tools</h3>
+                <ul class="skills-list">
+                    <li>GitHub</li>
+                    <li>NetBeans</li>
+                    <li>Visual Studio Code</li>
+                    <li>Figma</li>
+                    <li>Canva</li>
+                    <li>Blender</li>
+                    <li>Microsoft Project</li>
+                    <li>Excel</li>
+                    <li>PowerPoint</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Projects are generated dynamically using JavaScript -->
+
+    <section id="projects" class="cv-section">
+
+        <h2>Projects</h2>
+
+        <!-- Project filtering buttons -->
+        <div class="project-filters" role="group"
+             aria-label="Filter projects">
+
+            <button class="filter-btn active"
+                    type="button"
+                    data-category="All"
+                    aria-pressed="true">
+                All
+            </button>
+
+            <button class="filter-btn"
+                    type="button"
+                    data-category="Web"
+                    aria-pressed="false">
+                Web
+            </button>
+
+            <button class="filter-btn"
+                    type="button"
+                    data-category="Programming"
+                    aria-pressed="false">
+                Programming
+            </button>
+
+        </div>
+
+        <!-- Dynamic project cards appear here -->
+        <div id="project-list" class="projects-grid"></div>
+
+    </section>
+
+    <section id="hackathon" class="cv-section">
+
+        <h2>Hackathon Participation</h2>
+
+        <article>
+            <h3>Digital Health Hackathon 2026 - BMC</h3>
+
+            <p>5th Place Winner out of 265 teams.</p>
+
+            <p>
+                Developed and presented a digital health solution
+                as part of a competitive team project.
+            </p>
+        </article>
+
+    </section>
+
+    <div class="profile-details-grid">
+
+        <section id="activities" class="cv-section">
+
+            <h2>Clubs & Volunteering</h2>
+
+            <article>
+                <h3>Programming Club</h3>
+
+                <p>Planning & Events Management Department</p>
+                <p>2024 - 2025</p>
+
+                <p>
+                    Participated in planning and organizing club events
+                    and activities.
+                </p>
+            </article>
+
+            <article>
+                <h3>Asdam Volunteering Team - FCIT KAU</h3>
+
+                <p>2024 - 2025</p>
+
+                <p>
+                    Contributed to awareness campaigns and supported
+                    volunteering team initiatives and activities.
+                </p>
+            </article>
+
+        </section>
+
+        <div class="right-details">
+
+            <section id="interests" class="cv-section">
+
+                <h2>Interests</h2>
+
+                <ul class="skills-list">
+                    <li>Software Engineering</li>
+                    <li>Application Security</li>
+                    <li>UI/UX Design</li>
+                    <li>Electrical Circuits & Robotics</li>
+                    <li>Software-Hardware Integration</li>
+                </ul>
+
+            </section>
+
+            <section id="languages" class="cv-section">
+
+                <h2>Languages</h2>
+
+                <div class="language-list">
+                    <p>Arabic - Native</p>
+                    <p>English - Upper-Intermediate</p>
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+    <section id="contact" class="cv-section">
+
+        <h2>Contact</h2>
+
+        <p>
+            Email:
+            <a href="mailto:lara.karrani@gmail.com">
+                lara.karrani@gmail.com
+            </a>
+        </p>
+
+        <p>
+            GitHub:
+            <a href="https://github.com/Lara-Karrani"
+               target="_blank"
+               rel="noopener noreferrer">
+                github.com/Lara-Karrani
+            </a>
+        </p>
+
+        <p>
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/lara-karrani/?isSelfProfile=true"
+               target="_blank"
+               rel="noopener noreferrer">
+                Lara Karrani
+            </a>
+        </p>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Lara Karrani</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
